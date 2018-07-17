@@ -295,10 +295,8 @@ def showLatestDramas():
 @app.route('/dramas/<int:dramas_id>/dramasCat/')
 def dramaList(dramas_id):
     dramas = session.query(Dramas).filter_by(id=dramas_id).one_or_none()
-    #creator = getUserInfo(dramas.user_id)
     dlist = session.query(DramaLang).filter_by(dramas_id=dramas_id)
-    return render_template('drama.html', dlist=dlist,
-                               dramas=dramas)
+    return render_template('drama.html', dlist=dlist,dramas=dramas)
 
 
 @app.route('/dramas/<int:dramas_id>/dramasCat/new/', methods=['GET', 'POST'])

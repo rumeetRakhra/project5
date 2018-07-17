@@ -212,10 +212,7 @@ def dramaLangJSON(dramas_id, dramaLang_id):
 def showDramas():
     dramas = session.query(Dramas).all()
     dramaLang = session.query(DramaLang).all()
-    if 'username' not in login_session:
-        return render_template('publicDramas.html', dramas=dramas)
-    else:
-        return render_template('dramasCat.html', dramas=dramas)
+    return render_template('dramasCat.html', dramas=dramas)
 
 
 @app.route('/dramas/new/', methods=['GET', 'POST'])
@@ -298,15 +295,10 @@ def showLatestDramas():
 @app.route('/dramas/<int:dramas_id>/dramasCat/')
 def dramaList(dramas_id):
     dramas = session.query(Dramas).filter_by(id=dramas_id).one_or_none()
-    creator = getUserInfo(dramas.user_id)
+    #creator = getUserInfo(dramas.user_id)
     dlist = session.query(DramaLang).filter_by(dramas_id=dramas_id)
-    if 'username' not in login_session:
-        return render_template('publicDramaLang.html',
-                               dlist=dlist, dramas=dramas,
-                               creator=creator)
-    else:
-        return render_template('drama.html', dlist=dlist,
-                               dramas=dramas, creator=creator)
+    return render_template('drama.html', dlist=dlist,
+                               dramas=dramas)
 
 
 @app.route('/dramas/<int:dramas_id>/dramasCat/new/', methods=['GET', 'POST'])

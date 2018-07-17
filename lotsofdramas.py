@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Dramas, DramaLang, User, LatestDramas, LatestDramaLang
 
-#engine=create_engine('postgresql://grader:grader@localhost/catalog')
 engine=create_engine('sqlite:///dramas.db')
 Base.metadata.bind=engine
 DBSession=sessionmaker(bind=engine)
@@ -17,9 +16,12 @@ session.add(drama1)
 session.commit()
 
 dramalang1=DramaLang(name="Descendants of the Sun",
-                     description="""A soldier belonging to a Special Forces team falls
-                                    in love with a doctor. However, their romance is short-lived
-                                     as their professions keep them apart.""",
+                     description="""This story tells of doctors stationed in
+                     the fictional war zone of Urk (Uruk), and follows the love
+                     that develops between a surgeon (Kang Mo-yeon) and a
+                     special forces officer (Yoo Shi-jin), both elite in their
+                     respective fields. The story will track both their personal
+                     and professional struggles while exploring issues about the value of life.""",
                      genre = "Romance, melodrama,comedy",
                      running_time="60 minutes",
                      no_of_episodes="16 + 3 Special Episodes",
@@ -38,8 +40,9 @@ session.add(dramalang2)
 session.commit()
 
 dramalang3=DramaLang(name="Legend of the Blue Sea",
-                     description="""The love story of Heo Joon-jae, the son of a rich businessman who becomes 
-                     a handsome and clever con-man after his parents' divorce, and a mermaid named Shim Cheong.
+                     description="""The television series centers on the love story of
+                     Heo Joon-jae (Lee Min-ho), the son of a rich businessman who becomes a handsome and
+                     clever con-man after his parents' divorce, and a mermaid named Shim Cheong (Jun Ji-hyun).
                      Focusing on rebirth, fate, and unrequited love, their tale is juxtaposed with the parallel
                      story of their Joseon era incarnations, town head Kim Dam-ryeong and the mermaid Se-hwa.""",
                      genre=" Romance, comedy, fantasy",
@@ -61,9 +64,8 @@ session.add(dramalang4)
 session.commit()
 
 dramalang5=DramaLang(name="The K2",
-                     description="""Drama about a patriotic bodyguard who was abandoned by his country and colleagues, 
-                     a shut-in daughter of leading Presidential candidate who regards love as a tool for revenge,
-                     and the First Lady contender who hides her ambition and charisma behind a kind and
+                     description="""Drama about a patriotic bodyguard who was abandoned by his country and colleagues, a shut-in daughter of leading Presidential
+                     candidate who regards love as a tool for revenge, and the First Lady contender who hides her ambition and charisma behind a kind and
                      friendly personality.""",
                      genre=" Melodrama, political, action",
                      running_time="60 minutes",
@@ -73,8 +75,7 @@ session.add(dramalang5)
 session.commit()
 
 dramalang6=DramaLang(name="My Love from the Star",
-                     description="""Do Min Joon is an alien who was stranded four hundred years ago on Earth.
-                     He has cynical views on humans but when he gets
+                     description="""Do Min Joon is an alien who was stranded four hundred years ago on Earth. He has cynical views on humans but when he gets
                      entangled in the life of a former actress, his opinion slowly changes.""",
                      genre = "Romance, comedy, fantasy, melodrama, thriller",
                      running_time="60 minutes",
@@ -84,8 +85,7 @@ session.add(dramalang6)
 session.commit()
 
 dramalang7=DramaLang(name="The Heirs",
-                     description="""A romantic comedy about high school students living in top 1% 
-                     high society, learning about love and friendship.
+                     description="""A romantic comedy about high school students living in top 1% high society, learning about love and friendship.
                      Things get turned topsy turvy when the students end up getting tangled
                      with a girl from lower class who is the heir of "poverty", and romance unfolds.""",
                      genre = "Romance, youth, school, melodrama, comedy",
@@ -96,10 +96,10 @@ session.add(dramalang7)
 session.commit()
 
 dramalang8=DramaLang(name="Suspicious Partner",
-                     description="""Noh Ji Wook, a prosecutor, met Eun Bong Hee, a judicial trainee
-                     for the first time in an embarassing incident. Later, they meet again as a supervisor 
-                     and probationer. Things get worse when Bong Hee suddenly gets caught as a suspect 
-                     for her ex-boyfriend's murder.""",
+                     description="""Noh Ji Wook, a prosecutor, met Eun Bong Hee, a 1st year judicial trainee for the first time in unexpected embarassing
+                     incident. Three months later, they meet again as a supervisor and probationer. Things getting
+                     worse when Bong Hee suddenly gets caught as a suspect for her ex-boyfriend's murder. While she becomes a defendant and
+                     Ji Wook who is known as a harsh prosecutor""",
                      genre = " Romance, comedy, legal, crime",
                      running_time="30 minutes",
                      no_of_episodes="40 (two episodes back-to-back)",
@@ -108,8 +108,7 @@ session.add(dramalang8)
 session.commit()
 
 dramalang9=DramaLang(name="While You Were Sleeping",
-                     description="""A supernatural romance about a woman who can see
-                     the future in her dreams and a prosecutor who fights to stop
+                     description="""A supernatural romance about a woman who can see the future in her dreams and a prosecutor who fights to stop
                      these future events from happening.""",
                      genre = " Fantasy, legal, romance",
                      running_time="30 minutes",
@@ -119,8 +118,9 @@ session.add(dramalang9)
 session.commit()
 
 dramalang10=DramaLang(name="Healer",
-                     description="""Kim Moon-Ho unravels the truth about an old case and tries to
-                     help the people around it. Kim Moon-Ho affects the lives of Chae Young-Shin and Seo Jung-Hoo.""",
+                     description="""A mysterious messenger, an online newspaper reporter who only concerns her own interests, a popular reporter who
+                     agonizes over the truth and reality.When these three people meet, a passionate romance starts and the truths from the past and present
+                     reveal themselves to the world. This drama features young people and how they grow into real reporters.""",
                      genre = " Romance, comedy, thriller, action",
                      running_time="60 minutes",
                      no_of_episodes="20",
@@ -153,7 +153,11 @@ session.add(dramalang2)
 session.commit()
 
 dramalang3=DramaLang(name="Boss and Me",
-                     description="""The story is about the romance between Xue Shan Shan, a young office lady and her boss Feng Teng.""",
+                     description="""Based off Gu Man's very popular internet novel, the story tells of a kind hearted young girl named
+                     Xue Shan Shan (Zhao Li Ying) who works at a big conglomerate. However one of her weaknesses is eating, she loves to eat,
+                     and so upon discovering this her boss, Feng Teng (Zhang Han) decides to intentionally fatten her up; she
+                     just so happens to share the same blood type as his sister, and thus has the motive of making her the blood donor.
+                     Hence comedy ensues as she melts his heart with her exceptional appetite and her cute charm.""",
                      genre=" Romance, Modern Drama",
                      running_time="45 minutess",
                      no_of_episodes="34",
@@ -172,9 +176,12 @@ session.add(dramalang4)
 session.commit()
 
 dramalang5=DramaLang(name="Best Time",
-                     description="""In high school, Su Man fell in love with Song Yi, a student with good academics
-                     and superior basketball skills. The events took an unexpected turn when Su Man's best friend
-                     falls for Song Yi, and Lu Licheng develops
+                     description="""In high school, Su Man (Janine Chang) fell in love with Song Yi (Jia Nailiang), a student with good academics
+                     and superior basketball skills. She was then admitted to Tsinghua University School of Management and have never heard about
+                     him since. Ten years later, Su Man finds out that Song Yi is back from the United States and is the new director of MG Company.
+                     She decides to join the company and applies for a clerk post faking her resume. The Chief Investment Officer Lu Licheng (Wallace Chung)
+                     , who aspires to become the CEO of the company, finds out her true identity and threatens her; yet he appreciates her talent and
+                     keeps her by his side. The events took an unexpected turn when Su Man's best friend falls for Song Yi, and Lu Licheng develops
                      feelings for Su Man.""",
                      genre=" Melodrama, romance",
                      running_time="25 minutes",
@@ -184,8 +191,10 @@ session.add(dramalang5)
 session.commit()
 
 dramalang6=DramaLang(name="Love Me, If You Dare",
-                     description="""Simon is a criminal psychologist who returns to China from the US after a close encounter 
-                     with a serial killer, but his ordeal is not over yet. Together with his assistant, Jenny, they solve mysterious and violent criminal cases.""",
+                     description="""Simon is a criminal profiler from the US who retreats to China in the aftermath of an intense encounter with a
+                     serial killer. He hires Jenny to help him with his work, and they fall in love. But a serial-killer stalker is leaving calling
+                     cards for Simon in other killers' crime scenes. The suspect pool is small. Someone who knows Simon's terrible ordeal. Someone
+                     who sees Simon as a friend. Someone who is willing to kill Jenny to get to Simon.""",
                      genre=" Romance, crime, thriller",
                      running_time="43 minutes",
                      no_of_episodes="24",
@@ -194,8 +203,10 @@ session.add(dramalang6)
 session.commit()
 
 dramalang7=DramaLang(name="Memory Lost",
-                     description="""Highly intelligent police officer Bai Jingxi works with her partner Han Chen to solve many difficult
-                     cases using her outstanding deductive reasoning.""",
+                     description="""A woman lost her identity and her memory after getting kidnapped by a criminal organization. Her boyfriend was
+                     injured in the same incident and forgot her face, yet he never stopped looking for her. Many years later, a string of criminal activities
+                     reunited them. Although they were now strangers, their complementary skill sets made them formidable partners within a police
+                     task force called Black Shield. As they grew closer, her past came back to haunt them.""",
                      genre="Crime, police, romance",
                      running_time="43 minutes",
                      no_of_episodes=" 3 seasons, 12 episodes each season",
@@ -204,8 +215,14 @@ session.add(dramalang7)
 session.commit()
 
 dramalang8=DramaLang(name="Rush to the Dead Summer",
-                     description="""The story is set in a fictitious city called Qian Chuan. The events described in the story happen during a ten-year period, and express
-                     the doubts of young people who are in secondary school and just entering society. The protagonists study in a high school and the story begins in a warm summer.""",
+                     description="""Despite growing up poor, Li Xia works hard and wins a scholarship into a grand secondary school where she meets
+                     the legendary Fu Xiaosi and Lu Zhi'ang. Love booms in more ways than one, and the group of youth quickly became good friends. After
+                     graduation, everyone goes their separate ways. Xiaosi becomes a well-known artist, Li Xia becomes Xiaosi's assistant and other half,
+                     Qiqi won a singing competition and becomes a famous idol, Yu Jian heads overseas to realize her dreams of becoming a singer.
+                     However, with the onslaught of adversities: the death of Xiaosi's mother, Li Xia's departure, imprisonment of Zhi'ang, Qiqi's betrayal,
+                     Yu Jian's loss; the warm and bright summer starts to fade away. Everyone is changing and they become doubtful about the origin of their
+                     friendship. A span of ten years make them realize that other than memories, nothing can be eternal, but at least they learnt
+                     to love and grow.""",
                      genre="Youth, romance",
                      running_time="20 minutes",
                      no_of_episodes=" 48",
@@ -214,8 +231,10 @@ session.add(dramalang8)
 session.commit()
 
 dramalang9=DramaLang(name="My Story For You",
-                     description="""The story is based on the author's real-life story on his struggles and hardships before he became
-                     a famous novel writer, as well as his romance with his wife.""",
+                     description="""It's 1998, and Zhang Changgong gets his first taste of success as a developer in an IT company. At the
+                     same time, he meets and falls in love with Li Muzi (Zheng Shuang), a kind and intelligent university student. Unfortunately
+                     the IT bubble soon bursts, and Zhang Changgong is left unemployed. With the help of his friends and family, Changgong faces
+                     the challenges head on, and eventually becomes a top-selling author.""",
                      genre="metropolitan, romance, coming-of-age",
                      running_time="45 minutes",
                      no_of_episodes="45",
@@ -258,8 +277,12 @@ session.add(dramalang2)
 session.commit()
 
 dramalang3=DramaLang(name="Forbidden Love ",
-                     description="""Adnan lost his wife 11 yrs ago, lives in Istanbul with relative's son Behlul and his children's nanny, meets Bihter
-                     and falls in love with her. While Behlul and Bihter fall completely into each other, their secret affair affects everyone.""",
+                     description="""Having lost his wife eleven years ago, Adnan devoted all his attention to his daughter Nihal and his son Bulent.
+                     Adnan, who lives in one of the most prominent mansions along the Bosporus in Istanbul with a relative's son Behlul, and his
+                     children's nanny, meets Bihter who is also a socialite couple's daughter she is very elegant and beautiful, everyone who meets her
+                     get stunned and jealous of her, and he falls in love with her. While searching for peace, safety and happiness in Adnan's mansion,
+                     Bihter meets passion. Behlul and Bihter fall completely into each other and become drowned by their infatuation with each other.
+                     Their secret love affair will soon affect every member of the family.""",
                      genre="Drama, Romance ",
                      running_time="120 minutess approx",
                      no_of_episodes="79",
@@ -268,8 +291,9 @@ session.add(dramalang3)
 session.commit()
 
 dramalang4=DramaLang(name="Medcezir ",
-                     description="""Yaman who lives in one of the Istanbul is arrested and put in jail along with his brother Kenan for his brother stole a car at a gas station.
-                     Yaman gets a chance for a brand new start when he meets a lawyer Selim who takes Yaman to his new home.""",
+                     description="""Yaman,who lives in one of the Istanbul's suburbs,is arrested and put in jail along with his brother Kenan for
+                     his brother stole a car at a gas station.Yaman gets a chance for a brand new start when he meets a lawyer Selim who takes Yaman
+                     to his new home.""",
                      genre=" Comedy, Drama, Romance",
                      running_time="120 minutes approx",
                      no_of_episodes="77",
@@ -278,9 +302,12 @@ session.add(dramalang4)
 session.commit()
 
 dramalang5=DramaLang(name="Heart Of The City",
-                     description="""Ali, a sailor, brought up by Rauf, who saved him as a child after they both witnessed 
-                     the murder of his mother at the hands of his father. 
-                     One day he encounters the ballet dancer Derin and falls for and later saves her from a disastrous audition.""",
+                     description="""Heart of the City (Bu Sehir Arkandan Gelecek) is the story of Ali, a handsome sailor, brought up aboard a cargo
+                     ship by Rauf, who saved him as a child after they were both witness to the murder of his mother at the hands of his father.Rauf
+                     doesn't just take good care of Ali but also the ship's crew and he is affectionately referred to as their Mother.Raised
+                     at sea, Ali is still terrified to return to his roots in Istanbul and the trauma of his mother's death, even after 20 years.
+                     When one day he is forced off the ship he encounters the enchanting ballet dancer Derin, and immediately falls for her,
+                     chasing her deep in to the city to save a potentially disastrous audition.""",
                      genre=" Drama",
                      running_time="120 minutes approx",
                      no_of_episodes="70",
@@ -546,8 +573,11 @@ session.add(latestDrama1)
 session.commit()
 
 latestDramaLang1=LatestDramaLang(name="Stranger Things",
-                     description="""Joyce Byers lives in a small Indiana town with her son, Will. Later, he goes missing, she launches a terrifying investigation
-                     into his disappearance with local authorities. As they search, they unravel a series of mysteries. """,
+                     description="""This thrilling Netflix original drama stars Golden Globe-winning actress Winona Ryder as Joyce Byers, 
+                                who lives in a small Indiana town in 1983 -- inspired by a time when tales of science fiction captivated audiences. 
+                                When Joyce's 12-year-old son, Will, goes missing, she launches a terrifying investigation into his disappearance with
+                                local authorities. As they search for answers, they unravel a series of extraordinary mysteries involving secret 
+                                government experiments, unnerving supernatural forces, and a very unusual little girl.""",
                      genre = "Science Fiction, Horror fiction, Supernatural fiction, Historical period drama",
                      running_time="42-62 minutes",
                      no_of_episodes="17",
@@ -556,7 +586,7 @@ session.add(latestDramaLang1)
 session.commit()
 
 latestDramaLang2=LatestDramaLang(name="What's Wrong with Secretary Kim",
-                     description="""The narcissistic Vice President of a major corporation, Lee Young-Joon, and his highly capable secretary. 
+                     description="""Revolves around the narcissistic Vice President of a major corporation, Lee Young-Joon, and his highly capable secretary. 
                                     Misunderstandings arise when she announces that she will resign from her position, after working for Lee Young-Joon for
                                     nine years.""",
                      genre = "Romance comedy",
@@ -577,8 +607,10 @@ session.add(latestDramaLang3)
 session.commit()
 
 latestDramaLang4=LatestDramaLang(name="Radio Romance ",
-                     description="""Geu Rim has always wanted to become a radio writer. As she lacks the writing skills, she was always forced to be an assistant writer.
-                                    When she faces cancellation, in order to secure her place as a writer, she casts Ji Soo-ho, a top star actor.""",
+                     description="""Song Geu Rim (Kim So Hyun) works as a radio program writer. Her mother is blind, and as a child she 
+                                   listened to the radio frequently with her mother. This led her to become a radio program writer, but she isn't 
+                                   exactly talented in writing. Now, the radio program that she works on is facing cancellation.
+                                    Song Geu Rim succeeds in casting top actor Ji Soo Ho (Yoon Doo Joon) to try to save the show """,
                      genre = "Romance, Film",
                      running_time="60 minutes",
                      no_of_episodes="16",
@@ -598,8 +630,12 @@ session.add(latestDramaLang5)
 session.commit()
 
 latestDramaLang6=LatestDramaLang(name="Are You Human?",
-                     description="""Nam Shin, son of a rich family, falls into a coma due to an incident. His mother is an authority on brain science and artificial
-                                    intelligence so she creates an android named Nam Shin III which looked like her son and pretended to be Nam Shin. """,
+                     description="""The drama tells of an android called Nam Shin III who must pretend to be the son of a rich family
+                                    when the real Nam Shin falls into a coma. Nam Shin's mother, Oh Ro Ra is a genius on brain technology
+                                    and artificial intelligence (AI) so when her son, the real Nam Shin, is taken away from her at a young age,
+                                    in her grief she creates an android that looksexactly like her son and has it grow up in the place of Nam Shin. 
+                                    But when Nam Shin, who is a third generation heir to PK group, gets in an accident and is comatose, 
+                                    the android Nam Shin III must learn how to take his place. """,
                      genre = "Science Fiction, Romance Film, Political fiction, Mystery",
                      running_time="35 minutes",
                      no_of_episodes="36",
@@ -607,4 +643,3 @@ latestDramaLang6=LatestDramaLang(name="Are You Human?",
 session.add(latestDramaLang6)
 session.commit()
 print ("added Dramas!")
-

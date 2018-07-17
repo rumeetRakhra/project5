@@ -1,0 +1,105 @@
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    color: #2F4F4F;
+    display: block;
+}
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color:#2F4F4F;
+}
+
+strong{
+    font-size:20px;
+    color:#7B7573;
+}
+
+a{
+    font-size: 20px;
+    color:#236B8E;
+}
+
+.padding-top{
+    padding-top: 30px;
+}
+
+.padding-bottom{
+    padding-bottom: 30px;
+}
+
+.padding-right{
+    margin-right: 30px;
+}
+
+.padding-left{
+    margin-left: 30px;
+}
+
+.padding-none{
+    padding: 0px;
+}
+
+.button{
+    padding: 20px;
+    margin: 0px;
+    border-color:black;
+    border-width:2px;
+    color: #AAAAFF; 
+}
+
+.button:hover{
+    border-color: #000033;
+}
+
+.button.delete{
+    border-color: #000033;
+    color: #00009C; 
+}
+
+.button.delete:hover{
+    border-color: #ffb2b2;
+    color: red;
+}
+
+.glyphicon{
+    margin-right: 10px;
+}
+
+.top{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.banner.drama{
+    height: 150px;
+    width: auto;
+    background-color:#88ACE0;
+    background-position: right;
+    background-size: cover; 
+}
+
+.drama{
+    background-color: black;
+    padding: 20px;
+}
+
+.drama:hover{
+    background-color: #88ACE0;
+    padding: 20px;
+}
+
+.creator{
+    padding-right: 20px;
+    margin-top: -20px;
+    text-align: right;
+    float: right;
+}
+
+.creator figcaption{
+    font-size: 14px;
+    color: #7B7573;
+    margin-top: -20px;
+}
+

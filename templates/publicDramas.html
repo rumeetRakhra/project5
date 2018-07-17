@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="row top">
+    <div class="col-md-10"></div>
+    <div class="col-md-2 text-right">
+        <a href="{{url_for('showLogin')}}">Login</a>
+    </div>
+</div>
+
+<div class="row banner drama">
+    <div class="col-md-1"></div>
+    <div class="col-md-11 padding-none">
+        <h1>Dramas</h1>
+    </div>
+</div>
+{% include "flash.html" %}
+{% endblock %}

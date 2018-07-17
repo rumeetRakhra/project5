@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row banner drama">
+<h1>{{dramas.name}}
+    <figure class="creator">
+        <figcaption>{{creator.name}}</figcaption>
+    </figure>
+</h1>
+</div>
+
+{% include "flash.html" %}
+<div class="bg-primary">
+<div class="row padding-top padding-bottom">
+    <div class="col-md-1"></div>
+    <a href="{{url_for('newDramas',dramas_id=dramas.id)}}">
+        <button class="button btn-default">
+            <span class="glyphicon glyphicon-plus"></span>Add Drama
+        </button>
+    </a>
+</div>
+</div>
+
+<div class="bg-info">
+{% for i in dlist%}
+    <p><strong>Name</strong> :  {{i.name}}</p>
+    <p><strong>Description</strong> :  {{i.description}}</p>
+    <p><strong>Genre</strong> :  {{i.genre}}</p>
+    <p><strong>Running Time</strong> :  {{i.running_time}}</p>
+    <p><strong>Number of Episodes</strong> :  {{i.no_of_episodes}}</p>
+    <a href='{{url_for('editDramas',dramas_id=dramas.id,dramaLang_id=i.id)}}'>Edit</a>
+    </br>
+    <a href='{{url_for('deleteDramas',dramas_id=dramas.id,dramaLang_id=i.id)}}'>Delete</a>
+    <br>
+    <br> 
+    <br> 
+{% endfor %}
+</div>
+</div>
+{% endblock %}
+

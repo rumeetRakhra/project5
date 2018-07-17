@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<h1>{{dramas.name}}
+    <figure class="creator">
+         <figcaption>{{creator.name}}</figcaption>
+    </figure>
+</h1>
+{% include "flash.html" %}
+{% for i in dlist%}
+    <p><strong>Name</strong> :  {{i.name}}</p>
+        <p><strong>Description</strong> :  {{i.description}}</p>
+        <p><strong>Genre</strong> :  {{i.genre}}</p>
+        <p><strong>Running Time</strong> :  {{i.running_time}}</p>
+        <p><strong>Number of Episodes</strong> :  {{i.no_of_episodes}}</p>
+        
+        <br>
+        <br> 
+        <br> 
+           
+     </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="row banner drama">     
+    <h1>Catalog App</h1>
+</div> 
+
+<div class="row divider">
+    <div class="col-md-12"></div>
+</div>
+
+<div class="row banner drama">
+   <a href="{{url_for('showLatestDramas')}}">
+        <button class="button btn-block" style="background-color:black;" type="submit">
+            <span class="glyphicon glyphicon-film"></span>
+        Latest Dramas
+        </button>
+    </a>    
+</div>
+
+{% include "flash.html" %}
+
+<div class="bg-primary">
+<div class="row padding-top padding-bottom">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 padding-none">
+        <a href="{{url_for('newDramasCat')}}">
+            <button class="button btn-default">
+                <span class="glyphicon glyphicon-plus"></span>
+            Add Drama Category
+            </button>
+        </a>
+    </div>
+</div>
+</div>
+
+
+
+<div class="bg-info">
+{% for d in dramas %}
+<p><a href="{{url_for('dramaList',dramas_id=d.id)}}">{{d.name}}</a></p>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 drama">
+        <p><a href="{{url_for('editDramasCat',dramas_id=d.id)}}">Edit</a></p>
+        <p><a href="{{url_for('deleteDramasCat',dramas_id=d.id)}}">Delete</a></p>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
